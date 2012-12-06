@@ -1,0 +1,74 @@
+/* global reset */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* styling tags */
+
+body {
+	background: #0beeb9;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Styles for structure */
+
+#wrapper {
+	width: 1024px;
+	margin: 25px auto;
+	background: #ccc;
+	color: #000;
+}
+
+#header {
+	line-height: 80px;
+	text-align: center;
+	background: #8b8b8b;
+}
+
+#header h1 {
+	font-size: 42px;
+	color: #2c615c;
+}
+
+#navbar {
+	text-align: center;
+	line-height: 40px;
+	border-bottom: 1px solid black; /* ta bort sen */
+}
+
+#navbar li {
+	display: inline-block;
+	margin: 20px;
+}
+
+#navbar li a {
+	text-decoration: none;
+	font-size: 24px;
+	color: #159079;
+}
+#content {
+	padding: 20px;
+}
+
+#content h2 {
+	font-size: 22px;
+	margin: 10px;
+	font-style: italic;
+	color: #444;
+}
+
+#content p {
+	font-size: 16px;
+	color: #444;
+}
+
+#footer {
+	line-height: 40px;
+	text-align: center;
+	background: #336d68;
+}
+/* Styles for content pages */
+
