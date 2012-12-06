@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<urlset>
+  <url>
+    <loc>Albert</loc>
+    <lastmod>34</lastmod>
+    <changefreq>$10000</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>Claud</loc>
+    <lastmod>20</lastmod>
+    <changefreq>$2000</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

@@ -19,4 +19,6 @@
 
     /* get the xml printed */
     echo $domtree->saveXML();
+      $domtree->save("sitemap.xml")
+
 ?>
