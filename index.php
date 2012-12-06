@@ -11,9 +11,9 @@ function resolvePathToId(){
 $tokens = resolvePathToId();
 $id = $tokens[0];
 
-include('handlers/Response.class.php');
+include('handlers/response.class.php');
 include('db/Db.class.php');
-include('pages/Page.class.php');
+include('pages/page.class.php');
 
 $response = new Response();
 $response->type = 'html';
@@ -22,6 +22,6 @@ $db = new Db();
 
 $myPage = new Page($response, $db);
 
-$myPage->getTheContent($id);
+$myPage->getTheData($id);
 
 $response->respond();

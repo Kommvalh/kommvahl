@@ -12,7 +12,9 @@ class Page{
   //Hämtar data från DB. 
   public function getTheData($id){
     // get the data
-    $this->data = $this->db->getDataFromQuery("SELECT * FROM pages");//Här hämtar vi Allt som ligger i tabellen "Pages".
+
+    // get everything from the table "pages"
+    $this->data = $this->db->getDataFromQuery("SELECT * FROM pages");
     // make the responses
     $this->getTitle($id);
     $this->getContent($id);
@@ -22,20 +24,25 @@ class Page{
 
   //Nedanstående hämtar objekt. (Bättre förklaring kommer:-)).
   function getTitle($id){
-    // hämta data 
+    // get the title 
     $title = $this->data[$id]['title'];
+    // add to response-array
     $this->response->addToResponse($id, 'title', $title);
   }
 
   function getContent($id){
-    // hämta data 
+    // get the content
     $content = $this->data[$id]['content'];
+    // add to response-array
     $this->response->addToResponse($id, 'content', $content);
   }
+
   function getImages($id){
-    // hämta data 
-    $images = $this->data[$id]['src'];
-    $this->response->addToResponse($id, 'src', $images);
+    // get the images
+    // create a local variable called "images" and select src from DB
+    $images = $this->db->getDataFromQuery("SELECT i.src FROM pages p INNER JOIN pagesximages pxi ON pxi.pageId = p.id INNER JOIN images i ON pxi.imgId = i.picId WHERE p.id = '$id'");
+    // add to response-array
+    $this->response->addToResponse($id, 'img', $images);
   }
   
 
