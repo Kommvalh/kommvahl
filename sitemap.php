@@ -57,5 +57,5 @@
   }
   
    echo $doc->saveXML();
-  $doc->save("sitemap.xml")
+  $doc->save("sitemap2.xml")
   ?>
