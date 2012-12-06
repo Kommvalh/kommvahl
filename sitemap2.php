@@ -14,11 +14,18 @@
 
   );
   
-  $doc = new DOMDocument();
+  $doc = new DOMDocument('1.0', 'UTF-8');
   $doc->formatOutput = true;
   
   $urlset = $doc->createElement( "urlset" );
   $doc->appendChild( $urlset );
+
+  $xmlns = $doc->createAttribute("xmlns");
+  $urlset->appendChild($xmlns);
+
+  $xmlns_value = $doc->createTextNode("http://www.sitemaps.org/schemas/sitemap/0.9");
+  $xmlns->appendChild($xmlns_value);
+
   
   foreach( $employees as $employee )
   {
