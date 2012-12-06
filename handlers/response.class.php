@@ -23,6 +23,18 @@ class Response{
 
   public function respond(){
     header('Content-type: text/html; charset = UTF-8');
+
+  // Denna (eller liknande) funktion bör lämpligen leva i en Template-klass eller i Reponse-klassen.
+  function templateApply($response, $type){
+    extract($response);
+    require('templates/' . strtolower($type) . '.page.tpl.php');
+  }
+
+  // temporary header (borde leva i Template-klass eller Response-klassen)
+  header('Content-type: text/html; charset = UTF-8');
+
+  // respondWithHtmlTemplate
+  templateApply($response->response[$id], $myPage->type);
     print_r($this->response);
   }
 
