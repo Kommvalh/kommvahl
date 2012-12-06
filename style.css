@@ -128,4 +128,5 @@ body {
 }
 .floatLeft {
 	float: left;
+	margin:20px;
 }
