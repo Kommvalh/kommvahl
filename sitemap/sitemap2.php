@@ -1,18 +1,17 @@
 <?php
-  $employees = array();
-  $employees [] = array(
-  'loc' => 'Albert',
-  'lastmod' => '34',
-  'changefreq' => "$10000",
-  'priority' => "1"
-  );
-  $employees [] = array(
-  'loc' => 'Claud',
-  'lastmod' => '20',
-  'changefreq' => "$2000",
-  'priority' => "0.5"
-
-  );
+  $dbConn = mysqli_connect('localhost', 'root', '', 'sitemapDB');
+    if (mysqli_connect_errno())
+      {echo "Det blev fel. Felkod:".mysqli_connect_errno();
+      exit ;}
+  $sql = "SELECT * FROM sitemap";
+  $res = mysqli_query($dbConn, $sql);
+  $row = mysqli_fetch_assoc($res);
+ /* {
+    $locContent = $row['loc'];
+    $lastmodContent = $row['lastmod'];
+    $changefreqContent = $row['changefreq'];
+    $priorityContent = $row['priority'];
+  }*/
   
   $doc = new DOMDocument('1.0', 'UTF-8');
   $doc->formatOutput = true;
@@ -26,32 +25,32 @@
   $xmlns_value = $doc->createTextNode("http://www.sitemaps.org/schemas/sitemap/0.9");
   $xmlns->appendChild($xmlns_value);
 
-  
-  foreach( $employees as $employee )
+ 
+  foreach($row as $content )
   {
   $url = $doc->createElement( "url" );
   
   $loc = $doc->createElement( "loc" );
   $loc->appendChild(
-  $doc->createTextNode( $employee['loc'] )
+  $doc->createTextNode( $content['loc'] )
   );
   $url->appendChild( $loc );
   
   $lastmod = $doc->createElement( "lastmod" );
   $lastmod->appendChild(
-  $doc->createTextNode( $employee['lastmod'] )
+  $doc->createTextNode( $content['lastmod'] )
   );
   $url->appendChild( $lastmod );
   
   $changefreq = $doc->createElement( "changefreq" );
   $changefreq->appendChild(
-  $doc->createTextNode( $employee['changefreq'] )
+  $doc->createTextNode( $content['changefreq'] )
   );
   $url->appendChild( $changefreq );
   
   $priority = $doc->createElement( "priority" );
   $priority->appendChild(
-  $doc->createTextNode( $employee['priority'] )
+  $doc->createTextNode( $content['priority'] )
   );
   $url->appendChild( $priority );
 
