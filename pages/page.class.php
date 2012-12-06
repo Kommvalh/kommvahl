@@ -9,26 +9,33 @@ class Page{
     $this->db =& $db;
   }
 
-  public function getTheContent($id){
+  //Hämtar data från DB. 
+  public function getTheData($id){
     // get the data
-    $this->data = $this->db->getDataFromQuery("SELECT * FROM pages");
+    $this->data = $this->db->getDataFromQuery("SELECT * FROM pages");//Här hämtar vi Allt som ligger i tabellen "Pages".
     // make the responses
     $this->getTitle($id);
     $this->getContent($id);
+    $this->getImages($id);
   }
 
+
+  //Nedanstående hämtar objekt. (Bättre förklaring kommer:-)).
   function getTitle($id){
     // hämta data 
-    //$data = array('om_oss' => 'Om oss', 'kontakt' => 'Kontakta oss');
     $title = $this->data[$id]['title'];
     $this->response->addToResponse($id, 'title', $title);
   }
 
   function getContent($id){
     // hämta data 
-    //$data = array('om_oss' => 'Vi är världens bästa folieleverantör', 'kontakt' => 'Men vi svarar inte i telefon');
     $content = $this->data[$id]['content'];
     $this->response->addToResponse($id, 'content', $content);
+  }
+  function getImages($id){
+    // hämta data 
+    $images = $this->data[$id]['src'];
+    $this->response->addToResponse($id, 'src', $images);
   }
   
 
