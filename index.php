@@ -1,6 +1,6 @@
 <?php
 function resolvePathToId(){
-  $siteRootDir = 'acme/Kommvalh/';
+  $siteRootDir = 'kommvahl/';
   $path = $_SERVER['REQUEST_URI'];
   $path = end(explode($siteRootDir, $path));
   $path = trim($path,'/');
