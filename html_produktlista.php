@@ -6,7 +6,7 @@
 		<title> </title>
 	</head>
 
-	<body>
+	<body id="produktLista">
 		<div id="wrapper">
 		
 			<div id="header">
@@ -23,11 +23,11 @@
 			</div><!-- end navbar -->
 			
 			<div id="content">
-				<h2>Produkter</h2>
+				<h2>Products</h2>
 				<ul>
-					<li> <a href="#"> </a></li>
-					<li> <a href="#"> </a></li>
-					<li> <a href="#"> </a></li>
+					<li> <a href="index.php?page=product1">Slangbella </a></li>
+					<li> <a href="index.php?page=product2"> Folie</a></li>
+					<li> <a href="index.php?page=product3"> Glass</a></li>
 				</ul>
 			</div><!-- end content -->
 			
