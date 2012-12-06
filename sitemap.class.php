@@ -1,4 +1,6 @@
 <?php
+    
+
   $doc = new DOMDocument('1.0', 'UTF-8');
   $doc->formatOutput = true;
   
@@ -56,6 +58,6 @@
   $urlset->appendChild( $url );
   }
   
-   echo $doc->saveXML();
-  $doc->save("sitemap2.xml")
+   //echo $doc->saveXML();
+  $doc->save("sitemap.xml")
   ?>
