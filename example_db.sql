@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Värd: localhost
--- Skapad: 06 dec 2012 kl 14:06
--- Serverversion: 5.5.24-log
--- PHP-version: 5.3.13
+-- Skapad: 06 dec 2012 kl 15:09
+-- Serverversion: 5.5.25
+-- PHP-version: 5.4.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Databas: `acme`
@@ -26,7 +20,7 @@ SET time_zone = "+00:00";
 -- Tabellstruktur `images`
 --
 
-CREATE TABLE IF NOT EXISTS `images` (
+CREATE TABLE `images` (
   `picId` int(11) NOT NULL AUTO_INCREMENT,
   `src` varchar(255) NOT NULL,
   PRIMARY KEY (`picId`)
@@ -38,9 +32,9 @@ CREATE TABLE IF NOT EXISTS `images` (
 
 INSERT INTO `images` (`picId`, `src`) VALUES
 (1, '<img src="img/folie.jpg">'),
-(2, '<img src="img/folie.jpg">'),
-(3, '<img src="img/folie.jpg">'),
-(4, '<img src="img/folie.jpg">');
+(2, '<img src="img/slangbella.jpg">'),
+(3, '<img src="img/glass.jpg">'),
+(4, '<img src="img/kommvalh.jpg">');
 
 -- --------------------------------------------------------
 
@@ -48,7 +42,7 @@ INSERT INTO `images` (`picId`, `src`) VALUES
 -- Tabellstruktur `pages`
 --
 
-CREATE TABLE IF NOT EXISTS `pages` (
+CREATE TABLE `pages` (
   `id` varchar(20) NOT NULL DEFAULT '',
   `title` varchar(50) NOT NULL DEFAULT '',
   `content` text,
@@ -61,8 +55,10 @@ CREATE TABLE IF NOT EXISTS `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `content`, `type`) VALUES
-('om_oss', 'Om oss', 'Vi är världens största glass- och folieleverantör!', 'Page'),
-('kontakt', 'Kontakta oss', 'Våra linjer är alltid upptagna men det går bra att lämna ett facebookmeddelande till vår helpdesk.', 'Contact');
+('om_oss', 'Om oss', 'Vi är världens största glass-, slangbelle- och folieleverantör!', 'Page'),
+('kontakt', 'Kontakta oss', 'Våra linjer är alltid upptagna men det går bra att lämna ett facebookmeddelande till vår helpdesk.', 'Contact'),
+('hem', 'Startsida', 'Kommvalh är ett företag som arbetar med folie, slangbellor och glass. Våra folier används för att ge ett dekorativt ytskikt med olika funktioner, anpassade till den färdiga produktens användningsområde och miljö.', 'home'),
+('produkter', 'Produkter', '\r\nProdukter\r\nGislaved Folie arbetar både med skräddarsydda och kundunika produkter samt med olika standardkollektioner.\r\n\r\nVåra produktområden är uppdelade i tre olika grupper; folie, glass och slangbellor.\r\n\r\nInom våra områden erbjuder Kommvalh produkter som tillhör marknadens toppskick, vad det gäller design, kvalitet, miljö och funktion.', 'product');
 
 -- --------------------------------------------------------
 
@@ -70,7 +66,7 @@ INSERT INTO `pages` (`id`, `title`, `content`, `type`) VALUES
 -- Tabellstruktur `pagesximages`
 --
 
-CREATE TABLE IF NOT EXISTS `pagesximages` (
+CREATE TABLE `pagesximages` (
   `pageId` varchar(50) NOT NULL,
   `imgId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
