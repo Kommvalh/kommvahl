@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>h</loc>
-    <lastmod>h</lastmod>
-    <changefreq>h</changefreq>
-    <priority>h</priority>
+    <loc>http://www.kommvahl.se/kontakt</loc>
+    <lastmod>2012-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>2</loc>
-    <lastmod>2</lastmod>
-    <changefreq>2</changefreq>
-    <priority>2</priority>
+    <loc>http://www.kommvahl.se/om_oss</loc>
+    <lastmod>2012-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>w</loc>
-    <lastmod>w</lastmod>
-    <changefreq>w</changefreq>
-    <priority>w</priority>
+    <loc>http://www.kommvahl.se/produkter</loc>
+    <lastmod>2012-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>1</loc>
-    <lastmod>1</lastmod>
-    <changefreq>1</changefreq>
-    <priority>1</priority>
+    <loc>http://www.kommvahl.se/produkter/folie</loc>
+    <lastmod>2012-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.kommvahl.se/produkter/glass</loc>
+    <lastmod>2012-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.kommvahl.se/produkter/slangbella</loc>
+    <lastmod>2012-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

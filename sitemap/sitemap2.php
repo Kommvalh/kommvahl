@@ -1,18 +1,4 @@
 <?php
-  $dbConn = mysqli_connect('localhost', 'root', '', 'sitemapDB');
-    if (mysqli_connect_errno())
-      {echo "Det blev fel. Felkod:".mysqli_connect_errno();
-      exit ;}
-  $sql = "SELECT * FROM sitemap";
-  $res = mysqli_query($dbConn, $sql);
-  $row = mysqli_fetch_assoc($res);
- /* {
-    $locContent = $row['loc'];
-    $lastmodContent = $row['lastmod'];
-    $changefreqContent = $row['changefreq'];
-    $priorityContent = $row['priority'];
-  }*/
-  
   $doc = new DOMDocument('1.0', 'UTF-8');
   $doc->formatOutput = true;
   
@@ -25,32 +11,46 @@
   $xmlns_value = $doc->createTextNode("http://www.sitemaps.org/schemas/sitemap/0.9");
   $xmlns->appendChild($xmlns_value);
 
- 
-  foreach($row as $content )
-  {
+
+
+  $dbConn = mysqli_connect('localhost', 'root', 'root', 'sitemapDB');
+    if (mysqli_connect_errno())
+      {echo "Det blev fel. Felkod:".mysqli_connect_errno();
+      exit ;}
+  $sql = "SELECT * FROM sitemap";
+  $res = mysqli_query($dbConn, $sql);
+  $row = mysqli_fetch_assoc($res);
+  while ($row = mysqli_fetch_assoc($res))
+ {
+    $locContent = $row['loc'];
+    $lastmodContent = $row['lastmod'];
+    $changefreqContent = $row['changefreq'];
+    $priorityContent = $row['priority'];
+
+/* foreach($row as $content)*/
   $url = $doc->createElement( "url" );
   
   $loc = $doc->createElement( "loc" );
   $loc->appendChild(
-  $doc->createTextNode( $content['loc'] )
+  $doc->createTextNode( $locContent )
   );
   $url->appendChild( $loc );
   
   $lastmod = $doc->createElement( "lastmod" );
   $lastmod->appendChild(
-  $doc->createTextNode( $content['lastmod'] )
+  $doc->createTextNode( $lastmodContent )
   );
   $url->appendChild( $lastmod );
   
   $changefreq = $doc->createElement( "changefreq" );
   $changefreq->appendChild(
-  $doc->createTextNode( $content['changefreq'] )
+  $doc->createTextNode( $changefreqContent )
   );
   $url->appendChild( $changefreq );
   
   $priority = $doc->createElement( "priority" );
   $priority->appendChild(
-  $doc->createTextNode( $content['priority'] )
+  $doc->createTextNode( $priorityContent )
   );
   $url->appendChild( $priority );
 
