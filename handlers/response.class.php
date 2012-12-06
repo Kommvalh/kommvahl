@@ -7,7 +7,7 @@ class Response{
 
   public function addToResponse($id, $elementName, $elementContent){
 
-    if(isset($this->response[$id])) && $this->response[$id]){
+    if(isset($this->response[$id]) && $this->response[$id]){
 
       if(isset($this->response[$id][$elementName]) && $this->response[$id][$elementName]){
         $this->response[$id][$elementName] += $elementContent;
