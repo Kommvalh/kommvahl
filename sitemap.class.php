@@ -15,13 +15,12 @@
 
 
 
-  $dbConn = mysqli_connect('localhost', 'root', '', 'sitemapDB');
+  $dbConn = mysqli_connect('localhost', 'root', '', 'acme');
     if (mysqli_connect_errno())
       {echo "Det blev fel. Felkod:".mysqli_connect_errno();
       exit ;}
   $sql = "SELECT * FROM sitemap";
   $res = mysqli_query($dbConn, $sql);
-  $row = mysqli_fetch_assoc($res);
   while ($row = mysqli_fetch_assoc($res))
  {
     $locContent = $row['loc'];
@@ -58,6 +57,6 @@
   $urlset->appendChild( $url );
   }
   
-   //echo $doc->saveXML();
+    echo $doc->saveXML();
   $doc->save("sitemap.xml")
   ?>
