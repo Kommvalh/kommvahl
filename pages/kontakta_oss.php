@@ -1,0 +1,1 @@
+// class för kontakta_oss
