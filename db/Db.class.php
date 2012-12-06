@@ -7,12 +7,13 @@ class Db{
   private $pass = "";
   private $db = "acme";
 
-  function Db(){
+  function Db(){//Skapar en funktion som upprättar en databasuppkoppling.
     $this->mysqli = new mysqli($this->host, $this->user, $this->pass, $this->db) or die('something is wonky with the db');
     $this->mysqli->query("SET NAMES 'utf8'");
   }
 
-  public function getDataFromQuery($query){
+  //Här använder vi oss av funktionen DB uppkopplingen.
+  public function getDataFromQuery($query){//När vi skriver en fråga i pages så skickar vi in den via inparametern Query.
     $result = $this->mysqli->query($query);
     $data = array();
     while($row = $result->fetch_assoc()){
