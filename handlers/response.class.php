@@ -35,7 +35,7 @@ class Response{
 
   // respondWithHtmlTemplate
   templateApply($response->response[$id], $myPage->type);
-    print_r($this->response);
+  print_r($this->response);
   }
 
 
