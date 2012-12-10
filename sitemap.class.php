@@ -14,22 +14,20 @@
   $xmlns->appendChild($xmlns_value);
 
 
-  // ändra databaskoppling enligt oop-praxis
+
   $dbConn = mysqli_connect('localhost', 'root', '', 'acme');
     if (mysqli_connect_errno())
       {echo "Det blev fel. Felkod:".mysqli_connect_errno();
       exit ;}
+  $sqlSitemap = "SELECT * FROM sitemap";
+  $res = mysqli_query($dbConn, $sqlSitemap);
+  while ($row = mysqli_fetch_assoc($res))
 
-//Denna funktion ska srivas om så den funkar för vår sitemap
-
-  $sqlSitemap = $this->db->getDataFromQuery("SELECT * FROM sitemap");
-
-  while ($rowSitemap = mysqli_fetch_assoc($resSitemap))
  {
-    $locContent = $rowSitemap['loc'];
-    $lastmodContent = $rowSitemap['lastmod'];
-    $changefreqContent = $rowSitemap['changefreq'];
-    $priorityContent = $rowSitemap['priority'];
+    $locContent = $row['loc'];
+    $lastmodContent = $row['lastmod'];
+    $changefreqContent = $row['changefreq'];
+    $priorityContent = $row['priority'];
 
   $url = $doc->createElement( "url" );
   
