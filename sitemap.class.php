@@ -20,11 +20,10 @@
       {echo "Det blev fel. Felkod:".mysqli_connect_errno();
       exit ;}
 
-  function getImages($id){
-    // get the images
-    // create a local variable called "images" and select src from DB
-    $sqlSitemap = $this->db->getDataFromQuery("SELECT * FROM sitemap");
-  }  
+//Denna funktion ska srivas om så den funkar för vår sitemap
+
+  $sqlSitemap = $this->db->getDataFromQuery("SELECT * FROM sitemap");
+
   while ($rowSitemap = mysqli_fetch_assoc($resSitemap))
  {
     $locContent = $rowSitemap['loc'];
