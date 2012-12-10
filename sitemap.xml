@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.kommvahl.se</loc>
+    <lastmod>2012-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>http://www.kommvahl.se/kontakt</loc>
     <lastmod>2012-12-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -25,27 +31,15 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.kommvahl.se/produkter/slangbella</loc>
-    <lastmod>2012-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.kommvahl.se/produkter/sorbet</loc>
+    <loc>http://www.kommvahl.se/produkter/glass</loc>
     <lastmod>2012-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://www.kommvalh.se/ensida.php</loc>
+    <loc>http://www.kommvahl.se/produkter/slangbella</loc>
     <lastmod>2012-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.kommvalh.se/vadsomhelst.php</loc>
-    <lastmod>2012-12-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>

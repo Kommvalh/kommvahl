@@ -1,5 +1,4 @@
-<?php
-    
+<?php    
 
   $doc = new DOMDocument('1.0', 'UTF-8');
   $doc->formatOutput = true;
@@ -13,16 +12,14 @@
   $xmlns_value = $doc->createTextNode("http://www.sitemaps.org/schemas/sitemap/0.9");
   $xmlns->appendChild($xmlns_value);
 
-
-
-  $dbConn = mysqli_connect('localhost', 'root', '', 'acme');
+  $dbConn = mysqli_connect('localhost', 'root', 'root', 'acme');
     if (mysqli_connect_errno())
       {echo "Det blev fel. Felkod:".mysqli_connect_errno();
       exit ;}
   $sqlSitemap = "SELECT * FROM sitemap";
   $res = mysqli_query($dbConn, $sqlSitemap);
-  while ($row = mysqli_fetch_assoc($res))
 
+  while ($row = mysqli_fetch_assoc($res))
  {
     $locContent = $row['loc'];
     $lastmodContent = $row['lastmod'];

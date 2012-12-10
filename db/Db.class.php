@@ -4,7 +4,7 @@ class Db{
 
   private $host = "localhost";
   private $user = "root";
-  private $pass = "";//Om du kör i windowsmiljö och Wamp så tar ni bort Root.
+  private $pass = "root";//Om du kör i windowsmiljö och Wamp så tar ni bort Root.
   private $db = "acme";
 
   function Db(){//Skapar en funktion som upprättar en databasuppkoppling.
