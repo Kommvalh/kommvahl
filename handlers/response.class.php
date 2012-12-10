@@ -34,7 +34,7 @@ class Response{
   header('Content-type: text/html; charset = UTF-8');
 
   // respondWithHtmlTemplate
-  templateApply($response->response[$id], $myPage->type);
+//templateApply($response->response[$id], $myPage->type);
   print_r($this->response);
   }
 

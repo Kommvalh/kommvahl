@@ -5,7 +5,7 @@ class Page{
   protected $data;
 
   function Page(&$response, &$db){  
-    $this->response =& $response;
+    $this->response =& $response;//&-tecknet gör så att response fungerar uppåt.
     $this->db =& $db;
   }
 
@@ -20,8 +20,6 @@ class Page{
     $this->getContent($id);
     $this->getImages($id);
   }
-
-
   //Nedanstående hämtar objekt. (Bättre förklaring kommer:-)).
   function getTitle($id){
     // get the title 
@@ -40,7 +38,7 @@ class Page{
   function getImages($id){
     // get the images
     // create a local variable called "images" and select src from DB
-    $images = $this->db->getDataFromQuery("SELECT i.src FROM pages p INNER JOIN pagesximages pxi ON pxi.pageId = p.id INNER JOIN images i ON pxi.imgId = i.picId WHERE p.id = '$id'");
+    $images = $this->db->getDataFromQuery("SELECT i.* FROM pages p INNER JOIN pagesximages pxi ON pxi.pageId = p.id INNER JOIN images i ON pxi.imgId = i.picId WHERE p.id = '$id'");
     // add to response-array
     $this->response->addToResponse($id, 'img', $images);
   }
