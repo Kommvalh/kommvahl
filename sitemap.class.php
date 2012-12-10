@@ -19,8 +19,12 @@
     if (mysqli_connect_errno())
       {echo "Det blev fel. Felkod:".mysqli_connect_errno();
       exit ;}
-  $sqlSitemap = "SELECT * FROM sitemap";
-  $resSitemap = mysqli_query($dbConn, $sqlSitemap);
+
+  function getImages($id){
+    // get the images
+    // create a local variable called "images" and select src from DB
+    $sqlSitemap = $this->db->getDataFromQuery("SELECT * FROM sitemap");
+  }  
   while ($rowSitemap = mysqli_fetch_assoc($resSitemap))
  {
     $locContent = $rowSitemap['loc'];
