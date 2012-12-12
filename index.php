@@ -13,7 +13,7 @@ $id = $tokens[0];
 
 include('handlers/response.class.php');
 include('db/Db.class.php');
-include('templates/page.tpl.php');
+include('templates/page.class.php');
 //include('sitemap.class.php');
 
 $response = new Response();
