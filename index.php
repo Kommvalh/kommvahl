@@ -25,4 +25,6 @@ $myPage = new Page($response, $db);
 
 $myPage->getTheData($id);
 
-$response->respond();
+// respondWithHtmlTemplate
+$response->templateApply($response->response[$id], $myPage->type);
+$response->response;

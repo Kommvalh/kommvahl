@@ -3,6 +3,7 @@
 class Page{
     
   protected $data;
+  public $type;
 
   function Page(&$response, &$db){  
     $this->response =& $response;//&-tecknet gör så att response fungerar uppåt.
@@ -18,6 +19,7 @@ class Page{
     // make the responses
     $this->getTitle($id);
     $this->getContent($id);
+    $this->getType($id);
     $this->getImages($id);
   }
   //Nedanstående hämtar objekt. (Bättre förklaring kommer:-)).
@@ -35,14 +37,19 @@ class Page{
     $this->response->addToResponse($id, 'content', $content);
   }
 
+  function getType($id){
+    // get the content
+    $type = $this->data[$id]['type'];
+    // add to response-array
+    $this->response->addToResponse($id, 'type', $type);
+  }
+
   function getImages($id){
     // get the images
     // create a local variable called "images" and select src from DB
-    $images = $this->db->getDataFromQuery("SELECT i.* FROM pages p INNER JOIN pagesximages pxi ON pxi.pageId = p.id INNER JOIN images i ON pxi.imgId = i.picId WHERE p.id = '$id'");
+    $images = $this->db->getDataFromQuery("SELECT i.src FROM pages p INNER JOIN pagesximages pxi ON p.id = pxi.pageId INNER JOIN images i ON i.imgId = pxi.imgId WHERE p.id = '$id'");
     // add to response-array
     $this->response->addToResponse($id, 'img', $images);
   }
-  
-
 
 }

@@ -3,7 +3,6 @@
 class Response{
 
   public $response = array();
-  public $type;
 
   public function addToResponse($id, $elementName, $elementContent){
 
@@ -21,21 +20,19 @@ class Response{
     }
   }
 
-  public function respond(){
-    header('Content-type: text/html; charset = UTF-8');
-
   // Denna (eller liknande) funktion bör lämpligen leva i en Template-klass eller i Reponse-klassen.
   function templateApply($response, $type){
+    header('Content-type: text/html; charset = UTF-8');
     extract($response);
-    require('templates/' . strtolower($type) . '.page.tpl.php');
-  }
 
-  // temporary header (borde leva i Template-klass eller Response-klassen)
-  header('Content-type: text/html; charset = UTF-8');
-
-  // respondWithHtmlTemplate
-//templateApply($response->response[$id], $myPage->type);
-  print_r($this->response);
+    $images = array();
+    $myCounter = 0;
+    foreach($img as $src){
+      $images[$myCounter] = $src;
+      $myCounter++;
+    }
+    
+    require('templates/' . strtolower($type) . '.page.tpl.php'); 
   }
 
 
